@@ -10,6 +10,9 @@ print("\t2: Recover Data in Frames\n")
 
 # User Selection
 while True:
+    # Menu
+    print("\t1: Hide Data in Frames\n")
+    print("\t2: Recover Data in Frames\n")
     try:
         start_step = int(input("\nSelect the Program to Run: "))
 

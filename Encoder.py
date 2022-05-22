@@ -8,6 +8,17 @@ from PIL import Image
 # for split frames
 from moviepy.editor import *
 
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
 # Convert encoding data into 8-bit binary ASCII
 def generateData(data):
     newdata = []
@@ -136,7 +147,7 @@ def find_scenes(video_path, threshold=30.0):
 scenes = find_scenes(file_path)
 frame_start = scenes[0][1].get_frames() - 1
 frame_end = frame_start + 1
-print("\nFound scene change at frame: ", frame_start, " ", frame_end)
+print(f"\n{bcolors.OKGREEN}Found scene change at frame: ", frame_start, " ", frame_end, f"{bcolors.ENDC}")
 frame_location = frames_path
 filename = input("\nFile to Hide (inc. extension): ")
 encode(frame_start, frame_end, filename, frame_location)
